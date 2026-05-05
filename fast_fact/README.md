@@ -156,3 +156,23 @@ fast_fact/
 │       └── evaluate.py      # metrics, FinBERT prior, paper portfolio
 └── tests/                   # pytest suite (>80% line coverage)
 ```
+
+## 5. AI Usage
+
+The research direction and experimental design behind this project are
+ours. Alex and I arrived at the 8-K event-driven formulation by iterating
+through several alternatives including pure price-momentum baselines, sentiment-only
+news classifiers, and longer-horizon 10-K comparisons. Our work centered on design and decisoin making like 
+choosing the ticker universe, the 2011–2024 date window, the Item 2.02 / 4.02 filter for filings that actually carry
+new information, the beta-adjusted abnormal-return construction against
+SPY, the time-split boundaries chosen to avoid look-ahead leakage, and the
+four-way model comparison (untuned prior, frozen-encoder RAG, LoRA SFT,
+DPO) designed so each contrast isolates a specific source of signal we
+hypothesized would matter. We used ChatGPT and Claude Code as
+implementation aids and we gave them detailed instructions on how to impelment
+individual or groups of functions. We also had to explain unfamiliar APIs (PEFT, the DPO
+objective, yfinance quirks), and accelerate boilerplate like the training
+loops and unit-test fixtures. Their output was reviewed, edited, and
+integrated by us rather and the conceptual work,
+the data-handling decisions, and the verification of correctness against
+our intent remained our responsibility throughout.
