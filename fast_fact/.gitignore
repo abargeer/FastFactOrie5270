@@ -1,0 +1,30 @@
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Project artifacts
+fast_fact_outputs/
+runs/
+*.parquet
+*.pt
+.DS_Store
